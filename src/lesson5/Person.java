@@ -2,12 +2,12 @@ package lesson5;
 
 public class Person {
 
-    String fio;
-    String position;
-    String email;
-    String phone;
-    int salary;
-    int age;
+    private String fio;
+    private String position;
+    private String email;
+    private String phone;
+    private int salary;
+    private int age;
 
     public Person(String fio,
                   String position,
@@ -25,10 +25,11 @@ public class Person {
 
     }
 
-    public void showInfo() {
-        if(age > 40) {
-            System.out.printf("%s\n %s\n  %s\n  %s\n  %s\n  %s\n\n", fio, position, email, phone, salary, age);
-        }
+    public int getAge() {
+        return age;
+    }
 
+    public void showInfo() {
+        System.out.printf("%s\n %s\n  %s\n  %s\n  %s\n  %s\n\n", fio, position, email, phone, salary, age);
     }
 }

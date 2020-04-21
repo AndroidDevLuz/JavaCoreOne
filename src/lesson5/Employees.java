@@ -20,7 +20,9 @@ public class Employees {
 
     private static void printPersonFields(Person[] array) {
         for(int i=0; i < 5; i++){
-            array[i].showInfo();
+            if(array[i].getAge() > 40) {
+                array[i].showInfo();
+            }
         }
     }
 }
