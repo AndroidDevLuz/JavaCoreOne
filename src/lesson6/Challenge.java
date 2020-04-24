@@ -11,15 +11,24 @@ public class Challenge {
 
         Animal cat = new Cat("Барсик");
         cat.run(100);
-        cat.run(200);
 
-        Animal cat1 = new Cat("Барсик");
+        Animal cat1 = new Cat("Муся");
         cat1.run(100);
-        cat1.run(200);
+
+        Animal cat2 = new Cat("Кися");
+        cat2.run(100);
 
         Dog dog = new Dog("Балу");
         dog.run(100);
         dog.swimm(12);
+
+        Dog dog1 = new Dog("Кавказский коронавирус");
+        dog1.run(100);
+        dog1.swimm(12);
+
+        Dog dog2 = new Dog("Рэкс");
+        dog2.run(100);
+        dog2.swimm(12);
 
         System.out.printf("Количество созданных животных = %d", cat.getAnimalCount());
 

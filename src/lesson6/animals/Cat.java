@@ -5,7 +5,7 @@ public final class Cat extends Animal {
     public Cat(String name){
         super();
         this.name = name;
-        this.MIN_RUN_DISTANCE = 200;
+        this.MIN_RUN_DISTANCE = (int)((Math.random()+0.4)*200);
         count+=1;
     }
 

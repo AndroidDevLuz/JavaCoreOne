@@ -5,8 +5,8 @@ public final class Dog extends Animal {
     public Dog(String name){
         super();
         this.name = name;
-        this.MIN_RUN_DISTANCE = 500;
-        this.MIN_SWIMM_DISTANCE = 10;
+        this.MIN_RUN_DISTANCE = (int)((Math.random()+0.4)*500);
+        this.MIN_SWIMM_DISTANCE = (int)((Math.random()+0.9)*10);
         count+=1;
     }
 
@@ -31,6 +31,5 @@ public final class Dog extends Animal {
             System.out.println(outputMessage);
         }
     }
-
 
 }
