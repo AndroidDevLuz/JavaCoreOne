@@ -96,23 +96,23 @@ public class BattleMap extends JPanel {
         }
 
 
-
-
-
-
     }
 
     private void drawO(Graphics g, int cellX, int cellY) {
         Graphics2D graphics2D = (Graphics2D) g;
+        graphics2D.setStroke(new BasicStroke(10));
+        graphics2D.setColor(new Color(0, 0, 255));
+        graphics2D.drawOval(cellX * cellWidth, cellY * cellHeight, cellWidth, cellHeight);
 
-        g.setColor(new Color(0, 0, 255));
-        g.drawOval(cellX * cellWidth, cellY * cellHeight, cellWidth, cellHeight);
     }
 
     private void drawX(Graphics g, int cellX, int cellY) {
-        g.setColor(new Color(255, 3, 0));
-        g.drawLine(cellX * cellWidth, cellY * cellHeight, (cellX+1)*cellWidth, (cellY+1)*cellHeight);
-        g.drawLine((cellX) * cellWidth, (cellY+1) * cellHeight, (cellX+1)*cellWidth, (cellY)*cellHeight);
+        Graphics2D graphics2D = (Graphics2D) g;
+        graphics2D.setStroke(new BasicStroke(10));
+        graphics2D.setColor(new Color(255, 3, 0));
+        graphics2D.drawLine(cellX * cellWidth, cellY * cellHeight, (cellX + 1) * cellWidth, (cellY + 1) * cellHeight);
+        graphics2D.drawLine((cellX) * cellWidth, (cellY + 1) * cellHeight, (cellX + 1) * cellWidth, (cellY) * cellHeight);
+        graphics2D.setPaintMode();
     }
 
     public void startNewGame(int gameMode, int fieldSizeX, int fieldSizeY, int winLength) {
