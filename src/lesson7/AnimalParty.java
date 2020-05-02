@@ -18,10 +18,8 @@ public class AnimalParty {
 
         Plate plate = new Plate(85);
         plate.info();
-        plate.addFood(64);
+        //plate.addFood(64);
         giveEatCats(catsArray,  plate);
-
-
 
     }
 
