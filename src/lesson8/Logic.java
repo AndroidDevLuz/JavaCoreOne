@@ -62,8 +62,8 @@ public class Logic {
 
     public static boolean checkWin(char symb) {
 
-        for (int xOffset = 0; xOffset < 2; xOffset++) {
-            for (int yOffset = 0; yOffset < 2; yOffset++) {
+        for (int xOffset = 0; xOffset < (SIZE-DOTS_TO_WIN)+1; xOffset++) {
+            for (int yOffset = 0; yOffset < (SIZE-DOTS_TO_WIN)+1; yOffset++) {
                 if (checkDiagonals(symb, xOffset, yOffset) || checkLines(symb, xOffset, yOffset)) return true;
             }
         }
@@ -81,14 +81,14 @@ public class Logic {
             int x1 = i + xOffset;
             int y1 = i + yOffset;
             int x2 = i + xOffset;
-            int y2 = 3 - i + yOffset;
+            int y2 = DOTS_TO_WIN-1 - i + yOffset;
 
             //Символы в диагоналях
             char leftUpRight = map[i + xOffset][i + yOffset];
-            char leftDown = map[i + xOffset][3 - i + yOffset];
+            char leftDown = map[i + xOffset][DOTS_TO_WIN-1 - i + yOffset];
 
             leftUpRightDownDiagonals &= (map[i + xOffset][i + yOffset] == symb);
-            leftDownRightUpDiagonals &= (map[i + xOffset][3 - i + yOffset] == symb);
+            leftDownRightUpDiagonals &= (map[i + xOffset][DOTS_TO_WIN-1 - i + yOffset] == symb);
         }
 
         return leftUpRightDownDiagonals || leftDownRightUpDiagonals;
