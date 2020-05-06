@@ -23,6 +23,12 @@ public class Logic {
     public static final char DOT_X = 'X';
     public static final char DOT_O = 'O';
 
+    public static int [][] winCoordinatesleftUp = new int[DOTS_TO_WIN][DOTS_TO_WIN];
+    public static int [][] winCoordinatesleftDown = new int[DOTS_TO_WIN][DOTS_TO_WIN];
+
+
+
+
 
 
     static Random rand = new Random();
@@ -56,7 +62,6 @@ public class Logic {
             return;
         }
         gameFinished = false;
-        System.out.println("Игра закончена");
 
     }
 
@@ -75,6 +80,8 @@ public class Logic {
 
         boolean leftUpRightDownDiagonals = true;
         boolean leftDownRightUpDiagonals = true;
+
+
         for (int i = 0; i < DOTS_TO_WIN; i++) {
 
             //Немного переменных для наглядности. Чтобы видеть как мы двигаемся по диагоналям
@@ -88,7 +95,13 @@ public class Logic {
             char leftDown = map[i + xOffset][DOTS_TO_WIN-1 - i + yOffset];
 
             leftUpRightDownDiagonals &= (map[i + xOffset][i + yOffset] == symb);
+            winCoordinatesleftUp[i + xOffset][i + yOffset] = 2;
             leftDownRightUpDiagonals &= (map[i + xOffset][DOTS_TO_WIN-1 - i + yOffset] == symb);
+        }
+
+        if(leftUpRightDownDiagonals) {
+
+            endPosition = DOTS_TO_WIN-1+ xOffset, DOTS_TO_WIN-1+ yOffset ;
         }
 
         return leftUpRightDownDiagonals || leftDownRightUpDiagonals;
