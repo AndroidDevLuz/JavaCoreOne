@@ -101,7 +101,7 @@ public class Logic {
 
         if(leftUpRightDownDiagonals) {
 
-            endPosition = DOTS_TO_WIN-1+ xOffset, DOTS_TO_WIN-1+ yOffset ;
+            //endPosition = DOTS_TO_WIN-1+ xOffset, DOTS_TO_WIN-1+ yOffset ;
         }
 
         return leftUpRightDownDiagonals || leftDownRightUpDiagonals;
