@@ -32,11 +32,7 @@ public class Main extends  Thread {
     }
 
     private static boolean getResultOfMoving(Hurdles hurdle, Opportunity member) {
-        if(hurdle instanceof RunningMachine){
-            return ((RunningMachine)hurdle).testMoving(member);
-        } else {
-            return ((Wall)hurdle).testMoving(member);
-        }
+        return hurdle.testMoving(member);
     }
 
 }
