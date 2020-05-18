@@ -9,15 +9,9 @@ public class RunningMachine implements Hurdles {
 
     private static int LENGTH  = (int)((Math.random()+0.4)*2);
 
-    public boolean testMoving(Opportunity opportunity){
-
-        if(opportunity instanceof Cat){
-            return ((Cat)opportunity).run(LENGTH);
-        } else if(opportunity instanceof Human){
-            return ((Human)opportunity).run(LENGTH);
-        } else {
-            return ((Robot)opportunity).run(LENGTH);
-        }
-
+    @Override
+    public boolean testMoving(Opportunity opportunity) {
+        return opportunity.run(LENGTH);
     }
+
 }

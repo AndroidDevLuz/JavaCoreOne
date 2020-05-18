@@ -5,7 +5,7 @@ import lesson1_level2.members.Human;
 import lesson1_level2.members.Opportunity;
 import lesson1_level2.members.Robot;
 
-public class Main {
+public class Main extends  Thread {
 
     public static void main(String[] args) {
 
@@ -26,6 +26,8 @@ public class Main {
                 if(!getResultOfMoving(hurdle, member)) break;
             }
         }
+
+
 
     }
 

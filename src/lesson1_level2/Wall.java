@@ -9,13 +9,8 @@ public class Wall implements Hurdles {
 
     private static int HEIGHT  = (int)((Math.random()+0.4)*2);
 
-    public boolean testMoving(Opportunity opportunity){
-        if(opportunity instanceof Cat){
-            return ((Cat)opportunity).jump(HEIGHT);
-        } else if(opportunity instanceof Human){
-            return ((Human)opportunity).jump(HEIGHT);
-        } else {
-            return ((Robot)opportunity).jump(HEIGHT);
-        }
+    @Override
+    public boolean testMoving(Opportunity opportunity) {
+        return opportunity.jump(HEIGHT);
     }
 }
