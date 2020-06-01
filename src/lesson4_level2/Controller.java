@@ -2,14 +2,23 @@ package lesson4_level2;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
-public class Controller {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class Controller implements Initializable {
+
+
+
+
 
 
     private Calculator calculator;
 
-    public Controller() {
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
         this.calculator = new Calculator();
     }
 
@@ -55,4 +64,6 @@ public class Controller {
 
     public void buttonCommaClick(ActionEvent actionEvent) {
     }
+
+
 }
