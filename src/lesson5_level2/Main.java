@@ -25,24 +25,22 @@ public class Main {
         System.arraycopy(arr2, h, a2, 0, h);
 
         System.out.println("Время разбивки массива на два "+ (System.currentTimeMillis() - a)+ " мс");
-        Thread potok1 = new Thread(()->{
+        new Thread(()->{
             long a11 = System.currentTimeMillis();
             for (int i = 0; i < a1.length; i++) {
                 a1[i] = (float)(a1[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
             }
             System.arraycopy(a1, 0, arr2, 0, h);
             System.out.println("Время заполнения и склейки первого массива "+ (System.currentTimeMillis() - a11)+ " мс");
-        });
-        Thread potok2 = new Thread(()->{
+        }).start();
+        new Thread(()->{
             long a22 = System.currentTimeMillis();
             for (int i = 0; i < a2.length; i++) {
                 a2[i] = (float)(a2[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
             }
             System.arraycopy(a2, 0, arr2, h, h);
             System.out.println("Время заполнения и склейки второго массива "+ (System.currentTimeMillis() - a22)+ " мс");
-        });
-        potok1.start();
-        potok2.start();
+        }).start();
     }
 
     private static void firstMethod() {
