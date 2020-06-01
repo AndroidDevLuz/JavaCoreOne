@@ -1,11 +1,10 @@
 .button{
     -fx-background-color: #AAAAAA;
     -fx-border-color: derive(#00CCFF, -30%);
-    -fx-font-family: "Lato bold" "Calibri"
 }
 
 .button:hover{
-    -fx-background-color: derive(#AAAAAA, -20%);
+    -fx-background-color: derive(#AAAAAA, -5%);
 }
 
 .button:hover{
