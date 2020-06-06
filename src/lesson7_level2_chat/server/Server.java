@@ -9,6 +9,7 @@ import java.util.Vector;
 
 
 public class Server {
+    private static final String PERSONAL_KEY = "/w";
     private List<ClientHandler> clients;
     private AuthService authService;
 
@@ -41,7 +42,37 @@ public class Server {
         }
     }
 
-    public void broadcastMsg(String msg){
+    public void sendMessage(String fullMsg, String userMsg){
+        String key0 = null;
+        String key1 = null;
+        String[] stringKey = userMsg.split(" ");
+        try {
+
+            key0 = stringKey[0];
+            key1 = stringKey[1];
+
+        } catch (ArrayIndexOutOfBoundsException e){
+            e.printStackTrace();
+        }
+
+        if(key0 !=null && key1 !=null && key0.contains(PERSONAL_KEY)){
+            sendPersonalMessage(fullMsg,key1);
+        } else{
+            sendBroadcastMessage(fullMsg);
+        }
+
+    }
+
+    private void sendPersonalMessage(String msg, String key) {
+        for (ClientHandler c:clients) {
+            if(c.getNick().contains(key)) {
+                String[] message = msg.split(" ", 4);
+                c.sendMsg(message[0]+" "+message[3]);
+            }
+        }
+    }
+
+    private void sendBroadcastMessage(String msg) {
         for (ClientHandler c:clients) {
             c.sendMsg(msg);
         }

@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.net.Socket;
 
 public class ClientHandler {
+
     private Server server;
     private Socket socket;
     private DataInputStream in;
@@ -60,7 +61,7 @@ public class ClientHandler {
                             break;
                         }
 
-                        server.broadcastMsg(nick + ": " + str);
+                        server.sendMessage(nick + ": " + str, str);
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -87,5 +88,9 @@ public class ClientHandler {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public String getNick() {
+        return nick;
     }
 }
