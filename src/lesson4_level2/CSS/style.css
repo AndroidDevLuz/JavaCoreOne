@@ -1,0 +1,16 @@
+.button{
+    -fx-background-color: #AAAAAA;
+    -fx-border-color: derive(#00CCFF, -30%);
+}
+
+.button:hover{
+    -fx-background-color: derive(#AAAAAA, -5%);
+}
+
+.button:hover{
+    -fx-text-fill: whitesmoke;
+}
+
+.text-field{
+    -fx-background-color: #E1E1E1;
+}

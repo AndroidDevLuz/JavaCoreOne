@@ -1,6 +1,5 @@
 package lesson6;
 
-import jdk.swing.interop.SwingInterOpUtils;
 import lesson6.animals.Animal;
 import lesson6.animals.Cat;
 import lesson6.animals.Dog;
