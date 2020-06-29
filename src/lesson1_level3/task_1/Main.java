@@ -7,8 +7,6 @@ import java.util.List;
 
 public class Main {
 
-
-
     public static void main(String[] args) {
         List<String> stringArray = new ArrayList<>(Arrays.asList("A","B","C","D","E"));
         System.out.println(stringArray);
