@@ -6,6 +6,7 @@ public class Tunnel extends Stage{
 
     private Semaphore semaphore;
     public Tunnel() {
+        semaphore = new Semaphore(4 / 2);
         this.length = 80;
         this.description = "Тоннель " + length + " метров";
     }
